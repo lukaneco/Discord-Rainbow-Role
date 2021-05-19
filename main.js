@@ -82,16 +82,8 @@ function changeColor() {
         role.setColor(rainbow[place]).catch(console.error);
 
         if (logging) {
-            console.log(`[ColorChanger] Changed color to ${rainbow[place]} in server: ${servers[index]}`);
+            console.log(`[ColorChanger] Changed color of the role ${role} to ${rainbow[place]} in server: ${servers[index]}`);
         }
-
-
-
-
-
-
-
-
     }
 
     if (place == (size - 1)) {
@@ -181,10 +173,12 @@ client.on('ready', () => {
 
 
 
+    /*
     if (speed < 60000) {
         console.log("The minimum speed is 60.000, if this gets abused your bot might get IP-banned");
         process.exit(1);
     }
+    */
     setInterval(changeColor, speed);
     changeColor();
 });
